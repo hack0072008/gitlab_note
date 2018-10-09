@@ -1,3 +1,17 @@
+# rpm指定版本包下载：
+    http://mirrors.zju.edu.cn/gitlab-ce/yum/el7/
+
+
+
+# rpm版本包下载：
+    wget http://mirrors.zju.edu.cn/gitlab-ce/yum/el7/gitlab-ce-8.17.3-ce.0.el7.x86_64.rpm
+
+# rpm包安装：
+    rpm -ivh gitlab-ce-8.17.3-ce.0.el7.x86_64.rpm
+
+# rpm包卸载：
+    rpm -e gitlab-ce
+
 # gitlab-ctl reconfigure 假死，解决方法：
     ctrl + C
     systemctl restart gitlab-runsvdir
@@ -16,6 +30,14 @@
     gitlab-ctl stop unicorn
     gitlab-ctl stop sidekiq
 
+# 恢复：
+    gitlab-rake gitlab:backup:restore BACKUP=1538267907_2018_09_30
+    注意：gitlab_rails['backup_path']下有 1538267907_2018_09_30_gitlab_backup.tar 文件。
+
+
+# 无提示恢复(未测试)：
+    gitlab-rake gitlab:backup:restore BACKUP=1538267907_2018_09_30 -s
+
 
 # 恢复备份时的权限错误：
     可以用:gitlab-rake gitlab:check检查
@@ -28,11 +50,7 @@
     -rwx------ 1 git root 9108725760 Oct  8 15:49 1538267907_2018_09_30_gitlab_backup.tar
     [root@ima_sengled source]# gitlab-rake gitlab:backup:restore BACKUP=1538267907_2018_09_30
     ...
-
-# 无提示恢复(未测试)：
-    gitlab-rake gitlab:backup:restore BACKUP=1538267907_2018_09_30 -s
-
-
+    
 # 注意：
     恢复后，用户和组全部恢复到备份中的内容。
 
