@@ -35,7 +35,7 @@
     注意：gitlab_rails['backup_path']下有 1538267907_2018_09_30_gitlab_backup.tar 文件。
 
 
-# 无提示恢复(未测试)：
+# 无提示恢复(无效果)：
     gitlab-rake gitlab:backup:restore BACKUP=1538267907_2018_09_30 -s
 
 
