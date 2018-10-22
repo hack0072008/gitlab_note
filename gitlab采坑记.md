@@ -17,6 +17,7 @@
     wget http://mirrors.zju.edu.cn/gitlab-ce/yum/el7/gitlab-ce-11.3.6-ce.0.el7.x86_64.rpm   (latest)
     rpm -Uvh gitlab-ce-10.0.4-ce.0.el7.x86_64.rpm
     注意：官方升级策略
+          8.13.4 -> 8.17.7 -> 9.5.10 -> 10.8.7 -> 11.3.4
           https://docs.gitlab.com/ee/policy/maintenance.html#upgrade-recommendations
 
 # gitlab-ctl reconfigure 假死，解决方法：
