@@ -22,6 +22,14 @@
 
 # 启动后502错误：
     配置中 nginx 和 unicorn 的端口冲突导致(nginx默认为80，unicorn默认为8080)
+    1、权限问题:chmod -R 755 /var/log/gitlab
+    2、Gitlab的默认启动端口是80,8080
+       external_url 'http://localhost:8888' #指定访问端口，默认是80
+       unicorn['listen'] = '127.0.0.1'
+       unicorn['port'] = 8001    # 为unicorn worker的工作端口，默认为8080，如果你的8080端口被占用的，这一项需要更改。
+    3、内存不足的问题
+       安装gitlab的时候，已经说明你的空余内存需要有4G左右的内存，所以在安装gitlab的时候，请给足内存，在安装。
+    注：参考 http://www.mamicode.com/info-detail-2317465.html
 
 
 
