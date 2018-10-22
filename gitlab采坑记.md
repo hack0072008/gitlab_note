@@ -1,10 +1,14 @@
 # rpm指定版本包下载：
     http://mirrors.zju.edu.cn/gitlab-ce/yum/el7/
+    https://packages.gitlab.com/gitlab/gitlab-ce        //官方，比较慢
 
 
 
 # rpm版本包下载：
     wget http://mirrors.zju.edu.cn/gitlab-ce/yum/el7/gitlab-ce-8.17.3-ce.0.el7.x86_64.rpm
+    wget http://mirrors.zju.edu.cn/gitlab-ce/yum/el7/gitlab-ce-9.5.10-ce.0.el7.x86_64.rpm
+    wget http://mirrors.zju.edu.cn/gitlab-ce/yum/el7/gitlab-ce-10.8.7-ce.0.el7.x86_64.rpm
+    wget http://mirrors.zju.edu.cn/gitlab-ce/yum/el7/gitlab-ce-11.3.6-ce.0.el7.x86_64.rpm    //latest
 
 # rpm包安装：
     rpm -ivh gitlab-ce-8.17.3-ce.0.el7.x86_64.rpm
@@ -17,6 +21,7 @@
 # gitlab版本升级：
     wget http://mirrors.zju.edu.cn/gitlab-ce/yum/el7/gitlab-ce-11.3.6-ce.0.el7.x86_64.rpm   (latest)
     rpm -Uvh gitlab-ce-10.0.4-ce.0.el7.x86_64.rpm
+    
     注意：
          官方升级策略:
           8.13.4 -> 8.17.7 -> 9.5.10 -> 10.8.7 -> 11.3.4
@@ -86,3 +91,7 @@
     恢复后，无法恢复用户的图像信息。
 
 
+
+
+    ~完~
+    
