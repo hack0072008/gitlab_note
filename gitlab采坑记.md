@@ -30,6 +30,23 @@
          升级后500错误 和 "no implicit conversion of nil into String":
           https://gitlab.com/gitlab-org/omnibus-gitlab/issues/3189
 
+# gitlab汉化：
+    1.yum install -y git
+    2.mkdir /opt/gitlab_cn
+      git clone https://gitlab.com/xhang/gitlab.git
+      or
+      git clone https://gitlab.com/xhang/gitlab.git -b v10.0.2-zh    //指定v10.2.2的版本
+    3.cat gitlab/VERSION
+    4.gitlab-ctl stop
+    5.cd /opt/gitlab_cn
+      git diff v10.0.4 v10.0.4-zh > ../10.0.4-zh.diff
+    6.cd /opt/gitlab_cn
+      yum install patch -y
+      patch -d /opt/gitlab/embedded/service/gitlab-rails -p1 < 10.0.4-zh.diff
+    7.gitlab-ctl start
+      gitlab-ctl reconfigure
+    
+
 # gitlab-ctl reconfigure 假死，解决方法：
     ctrl + C
     systemctl restart gitlab-runsvdir
