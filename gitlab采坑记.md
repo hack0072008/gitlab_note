@@ -60,6 +60,14 @@
     [root@ima_sengled source]# gitlab-rake gitlab:backup:restore BACKUP=1538267907_2018_09_30
     ...
     
+# 重装清理操作
+    gitlab-ctl stop
+    yum erase gitlab-ce
+    ps -ef|grep gitlab-ctl|awk '{print $2}'|kill -9
+    find / -name gitlab    ---->  清除缓存和临时文件
+    /etc/gitlab/gitlab.rp 的 git_data_dirs 下清空
+    rm -rf /etc/gitlab/gitlab.rb
+
 # 注意：
     恢复后，用户和组全部恢复到备份中的内容。
     恢复后，无法恢复用户的图像信息。
