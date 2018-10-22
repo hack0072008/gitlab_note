@@ -46,6 +46,12 @@
     7.gitlab-ctl start
       gitlab-ctl reconfigure
     
+# gitlab 启用https:
+    vim /etc/gitlab/gitlab.rb
+    external_url"https://git.xxxx.com"
+    nginx['redirect_http_to_https']=true
+    nginx['ssl_certificate']="/var/xxxx.crt"
+    nginx['ssl_certificate_key']="/var/xxxx.key"
 
 # gitlab-ctl reconfigure 假死，解决方法：
     ctrl + C
