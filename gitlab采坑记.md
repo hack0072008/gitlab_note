@@ -48,10 +48,11 @@
     
 # gitlab 启用https:
     vim /etc/gitlab/gitlab.rb
-    external_url"https://git.xxxx.com"
-    nginx['redirect_http_to_https']=true
-    nginx['ssl_certificate']="/var/xxxx.crt"
-    nginx['ssl_certificate_key']="/var/xxxx.key"
+        external_url "https://git.xxxx.com"
+        nginx['redirect_http_to_https']=true
+        nginx['ssl_certificate']="/var/xxxx.crt"
+        nginx['ssl_certificate_key']="/var/xxxx.key"
+    gitlab-ctl reconfigure
 
 # gitlab-ctl reconfigure 假死，解决方法：
     ctrl + C
@@ -73,13 +74,10 @@
     注：参考 http://www.mamicode.com/info-detail-2317465.html
 
 
-
-
-# 恢复前需：
+# 恢复：
     gitlab-ctl stop unicorn
     gitlab-ctl stop sidekiq
-
-# 恢复：
+    
     gitlab-rake gitlab:backup:restore BACKUP=1538267907_2018_09_30
     注意：gitlab_rails['backup_path']下有 1538267907_2018_09_30_gitlab_backup.tar 文件。
          恢复后记得删除 git_data_dirs 下的的 repositories.old.xxxx目录，恢复一次就生成一次以前的备份，空间很大
