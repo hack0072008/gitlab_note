@@ -17,7 +17,13 @@
     rpm -e gitlab-ce
     or
     yum erase gitlab-ce
-    
+# gitlab重要参数：
+    external_url 'http://10.100.102.207:8888'
+    gitlab_rails['backup_path'] = "/data1/backup/git_back/source"
+    git_data_dirs({"default" => "/data1/gitlab-data"})
+    nginx port
+    uniorn port
+
 # gitlab版本升级：
     wget http://mirrors.zju.edu.cn/gitlab-ce/yum/el7/gitlab-ce-11.3.6-ce.0.el7.x86_64.rpm   (latest)
     rpm -Uvh gitlab-ce-10.0.4-ce.0.el7.x86_64.rpm
@@ -101,6 +107,7 @@
     
 # 重装清理操作
     gitlab-ctl stop
+    gitlab-ctl uninstall
     yum erase gitlab-ce
     ps -ef|grep gitlab-ctl|awk '{print $2}'|kill -9
     find / -name gitlab    ---->  清除缓存和临时文件
