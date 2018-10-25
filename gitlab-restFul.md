@@ -123,7 +123,9 @@
     for file_diff in result['diffs']:
         print(file_diff)
     
-    
+#### groups/project members's api
+    参考：
+        https://docs.gitlab.com/ce/api/members.html
     
     
 ~~待续~~
