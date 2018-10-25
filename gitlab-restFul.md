@@ -41,7 +41,7 @@
     projects = gl.projects.list(visibility='public')  # public, internal or private
 
 
-### 获取 project 对象是以下操作的基础
+## 获取 project 对象是以下操作的基础
 
 #### 通过指定project对象获取该项目的所有分支
     branches = project.branches.list()
@@ -123,7 +123,7 @@
     for file_diff in result['diffs']:
         print(file_diff)
     
-#### groups/project members's api
+## groups/project members's api
     参考：
         https://docs.gitlab.com/ce/api/members.html
     
