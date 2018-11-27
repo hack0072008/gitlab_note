@@ -35,6 +35,12 @@
           
          升级后500错误 和 "no implicit conversion of nil into String":
           https://gitlab.com/gitlab-org/omnibus-gitlab/issues/3189
+          
+          vim /etc/gitlab/gitlab.rb 
+              # git_data_dirs({"default" => "/var/opt/gitlab/git-data"})
+          ---->
+              git_data_dir({"default" => { "path" => "/var/opt/gitlab/git-data" } })
+
 
 # gitlab汉化：
     1.yum install -y git
