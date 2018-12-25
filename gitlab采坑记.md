@@ -1,13 +1,16 @@
 # rpm指定版本包下载：
-    http://mirrors.zju.edu.cn/gitlab-ce/yum/el7/
-    https://packages.gitlab.com/gitlab/gitlab-ce        //官方，比较慢
+    
+    官方：
+        https://packages.gitlab.com/gitlab/gitlab-ce        //官方，比较慢
+    国内仓库：
+        http://mirrors.zju.edu.cn/gitlab-ce/yum/el7/
+
+        https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el6/            #centos6	
+        https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el7/            #centos7
 
 
 
 # rpm版本包下载：
-    官方rpm仓库：https://packages.gitlab.com/gitlab/gitlab-ce
-    
-    
     wget http://mirrors.zju.edu.cn/gitlab-ce/yum/el7/gitlab-ce-8.17.3-ce.0.el7.x86_64.rpm
     wget http://mirrors.zju.edu.cn/gitlab-ce/yum/el7/gitlab-ce-9.5.10-ce.0.el7.x86_64.rpm
     wget http://mirrors.zju.edu.cn/gitlab-ce/yum/el7/gitlab-ce-10.8.7-ce.0.el7.x86_64.rpm
