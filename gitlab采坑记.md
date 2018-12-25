@@ -5,6 +5,9 @@
 
 
 # rpm版本包下载：
+    官方rpm仓库：https://packages.gitlab.com/gitlab/gitlab-ce
+    
+    
     wget http://mirrors.zju.edu.cn/gitlab-ce/yum/el7/gitlab-ce-8.17.3-ce.0.el7.x86_64.rpm
     wget http://mirrors.zju.edu.cn/gitlab-ce/yum/el7/gitlab-ce-9.5.10-ce.0.el7.x86_64.rpm
     wget http://mirrors.zju.edu.cn/gitlab-ce/yum/el7/gitlab-ce-10.8.7-ce.0.el7.x86_64.rpm
